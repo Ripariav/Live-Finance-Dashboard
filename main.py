@@ -252,10 +252,10 @@ def crear_grafica_volatilidad(df, width, height):
 #RUTAS
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    if request.method == 'POST':
-            primera_fecha = request.form.get('primera_fecha', '2024-01-01')
-            segunda_fecha = request.form.get('segunda_fecha', '2024-12-31')
-            ticker = request.form.get('ticker', 'TSLA')
+    primera_fecha = request.form.get('primera_fecha', '2024-01-01')
+    segunda_fecha = request.form.get('segunda_fecha', '2024-12-31')
+    ticker = request.form.get('ticker', 'TSLA')
+
     try:
         primera_fecha = pd.to_datetime(primera_fecha).strftime('%Y-%m-%d')
         segunda_fecha = pd.to_datetime(segunda_fecha).strftime('%Y-%m-%d')
